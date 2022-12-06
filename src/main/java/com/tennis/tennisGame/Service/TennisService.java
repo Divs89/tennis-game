@@ -24,20 +24,34 @@ public class TennisService {
 		this.playerTwoScore = playerTwo;
 
 		if(playerOneScore>=0 && playerTwoScore>=0) {
-			if(playerOneScore == 3 && playerTwoScore ==3) {
-				return "Deuce";
-			}
-			else if((playerOneScore == 4 && playerTwoScore ==3)||(playerOneScore == 3 && playerTwoScore ==4)) {
-				return (playerOneScore==4)?"PlayerOne Advantage":"PlayerTwo Advantage";
-			}
-			else if((playerOneScore == 5 && playerTwoScore ==3)||(playerOneScore == 3 && playerTwoScore ==5)){
-				return (playerOneScore>3)?"PlayerOne Wins the Game":"PlayerTwo Wins the Game";
-			}
-			else
-			return (playerOneScore == playerTwoScore)?score.get(playerOneScore)+"-All":score.get(playerOneScore)+"-"+score.get(playerTwoScore);
+			return (playerOneScore<=3 && playerTwoScore <=3)?deuce():score();
 		}
 		else
 			return "invalid Score";
+	}
+
+	public String deuce() {
+		// TODO Auto-generated method stub
+		if (playerOneScore ==3 && playerTwoScore == 3){
+	        return "Deuce";
+	        }
+
+	    else {
+	       return (playerOneScore == playerTwoScore)?(score.get(playerOneScore)+"-All"):
+	                            (score.get(playerOneScore)+"-"+score.get(playerTwoScore));
+	         }
+	}
+	
+	public String score() {
+		// TODO Auto-generated method stub
+		int score = playerOneScore - playerTwoScore;
+
+		if(Math.signum(score)==1){
+		    return (score>=2)? "PlayerOne Wins the Game":"PlayerOne "+"Advantage";}
+
+		else{
+		    return (score<=-2)?"PlayerTwo Wins the Game":"PlayerTwo "+"Advantage";
+		}
 	}
 
 }
