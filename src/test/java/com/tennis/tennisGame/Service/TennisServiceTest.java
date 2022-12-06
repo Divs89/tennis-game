@@ -60,4 +60,18 @@ public class TennisServiceTest {
 		assertEquals("Forty-Love",result);
 	}
 	
+	/* When both player scores point */
+	@Test
+	public void fortyFifteen() {
+		result = test.getScore(3,1);
+		assertEquals("Forty-Fifteen",result);
+	}
+	
+	/* When both player scores point */
+	@Test
+	public void fifteenThirty() {
+		result = test.getScore(1,2);
+		assertEquals("Fifteen-Thirty",result);
+	}
+	
 }
