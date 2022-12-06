@@ -88,4 +88,11 @@ public class TennisServiceTest {
 		assertEquals("Thirty-All",result);
 	}
 	
+	/* When both player scores 3 point-Deuce */
+	@Test
+	public void deuce() {
+		result = test.getScore(3,3);
+		assertEquals("Deuce",result);
+	}
+	
 }

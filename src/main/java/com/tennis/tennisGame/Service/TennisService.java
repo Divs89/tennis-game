@@ -24,6 +24,10 @@ public class TennisService {
 		this.playerTwoScore = playerTwo;
 
 		if(playerOneScore>=0 && playerTwoScore>=0) {
+			if(playerOneScore == 3 && playerTwoScore ==3) {
+				return "Deuce";
+			}
+			else
 			return (playerOneScore == playerTwoScore)?score.get(playerOneScore)+"-All":score.get(playerOneScore)+"-"+score.get(playerTwoScore);
 		}
 		else
