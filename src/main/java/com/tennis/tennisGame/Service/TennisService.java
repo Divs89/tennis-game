@@ -27,7 +27,7 @@ public class TennisService {
 			if(playerOneScore == 3 && playerTwoScore ==3) {
 				return "Deuce";
 			}
-			else if(playerOneScore == 4 && playerTwoScore ==3) {
+			else if((playerOneScore == 4 && playerTwoScore ==3)||(playerOneScore == 3 && playerTwoScore ==4)) {
 				return "Advantage";
 			}
 			else

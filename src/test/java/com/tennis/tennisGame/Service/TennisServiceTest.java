@@ -102,4 +102,10 @@ public class TennisServiceTest {
 		assertEquals("Advantage",result);
 	}
 	
+	/* When player1 scores a point after deuce */
+	@Test
+	public void advTwo() {
+		result = test.getScore(3,4);
+		assertEquals("Advantage",result);
+	}
 }
