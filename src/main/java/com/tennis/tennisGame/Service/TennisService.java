@@ -7,16 +7,21 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TennisService {
-	int playerOneScore;
-	int playerTwoScore;
 	
 	Map<Integer,String> score = new HashMap<>();
+	Map<String,Integer> points = new HashMap<>();
+	
+	int playerOneScore;
+	int playerTwoScore;	
 	
 	TennisService(){
 		score.put(0,"Love");
 		score.put(1,"Fifteen");
 		score.put(2,"Thirty");
 		score.put(3,"Forty");
+		
+		points.put("playerOneScore", 0);
+		points.put("playerTwoScore", 0);
 	}
 	
 	/* 
@@ -26,9 +31,11 @@ public class TennisService {
 	public String getScore(int playerOne, int playerTwo) {
 		this.playerOneScore = playerOne;
 		this.playerTwoScore = playerTwo;
-
-		if(playerOneScore>=0 && playerTwoScore>=0) {
-			return (playerOneScore<=3 && playerTwoScore <=3)?deuce():score();
+	
+		if(playerOne>=points.get("playerOneScore") && playerTwo >=points.get("playerTwoScore")) {
+			points.put("playerOneScore", playerOne);
+			points.put("playerTwoScore", playerTwo);
+			return (playerOne<=3 && playerTwo <=3)?deuce():score();
 		}
 		else
 			return "invalid Score";
@@ -77,6 +84,16 @@ public class TennisService {
 	public String statics() {
 		// TODO Auto-generated method stub
 		return (" { Statics :- PlayerOne Won : "+playerOneScore+ " Points ; PlayerTwo Won : "+ playerTwoScore+" Points }");
+	}
+	
+	/* Reset the scores to zero
+	 * 
+	 */
+	
+	public String resetScore() {
+		points.put("playerOneScore", 0);
+		points.put("playerTwoScore", 0);
+		return "Love-All";
 	}
 
 }

@@ -14,6 +14,7 @@ public class TennisServiceTest {
 
 	@Test
 	public void loveAll() {
+		test.resetScore();
 		result = test.getScore(0, 0);
 		assertEquals("Love-All",result);
 	}
@@ -21,6 +22,7 @@ public class TennisServiceTest {
 	/* To check player2 scores a point */
 	@Test
 	public void loveFifteen() {
+		test.resetScore();
 		result = test.getScore(0, 1);
 		assertEquals("Love-Fifteen",result);
 	}
@@ -28,6 +30,7 @@ public class TennisServiceTest {
 	/* To check player2 scores 2 point */
 	@Test
 	public void loveThirty() {
+		test.resetScore();
 		result = test.getScore(0, 2);
 		assertEquals("Love-Thirty",result);
 	}
@@ -42,6 +45,7 @@ public class TennisServiceTest {
 	/* To check player1 scores a point */
 	@Test
 	public void fifteenLove() {
+		test.resetScore();
 		result = test.getScore(1,0);
 		assertEquals("Fifteen-Love",result);
 	}
@@ -49,6 +53,7 @@ public class TennisServiceTest {
 	/* To check player1 scores 2 point */
 	@Test
 	public void thirtyLove() {
+		test.resetScore();
 		result = test.getScore(2,0);
 		assertEquals("Thirty-Love",result);
 	}
@@ -56,6 +61,7 @@ public class TennisServiceTest {
 	/* To check player1 scores 3 point */
 	@Test
 	public void fortyLove() {
+		test.resetScore();
 		result = test.getScore(3,0);
 		assertEquals("Forty-Love",result);
 	}
@@ -63,6 +69,7 @@ public class TennisServiceTest {
 	/* When both player scores point */
 	@Test
 	public void fortyFifteen() {
+		test.resetScore();
 		result = test.getScore(3,1);
 		assertEquals("Forty-Fifteen",result);
 	}
@@ -70,6 +77,7 @@ public class TennisServiceTest {
 	/* When both player scores point */
 	@Test
 	public void fifteenThirty() {
+		test.resetScore();
 		result = test.getScore(1,2);
 		assertEquals("Fifteen-Thirty",result);
 	}
@@ -91,6 +99,7 @@ public class TennisServiceTest {
 	/* When both player scores 3 point-Deuce */
 	@Test
 	public void deuce() {
+		test.resetScore();
 		result = test.getScore(3,3);
 		assertEquals("Deuce",result);
 	}
@@ -120,6 +129,7 @@ public class TennisServiceTest {
 	/* When player2 wins a game */
 	@Test
 	public void playerTwoWins() {
+		test.resetScore();
 		result = test.getScore(2,5);
 		assertEquals("PlayerTwo Wins the Game { Statics :- PlayerOne Won : 2 Points ; PlayerTwo Won : 5 Points }",result);
 	}
@@ -128,14 +138,15 @@ public class TennisServiceTest {
 	
 	@Test
 	public void morePointsAdv() {
-		result = test.getScore(23,22);
+		result = test.getScore(13,12);
 		assertEquals("PlayerOne Advantage",result);
 	}
 	
 	@Test
 	public void morePointsWin() {
-		result = test.getScore(13,15);
-		assertEquals("PlayerTwo Wins the Game { Statics :- PlayerOne Won : 13 Points ; PlayerTwo Won : 15 Points }",result);
+		result = test.getScore(25,23);
+		assertEquals("PlayerOne Wins the Game { Statics :- PlayerOne Won : 25 Points ; PlayerTwo Won : 23 Points }",result);
 	}
+	
 	
 }
