@@ -115,4 +115,11 @@ public class TennisServiceTest {
 		result = test.getScore(5,3);
 		assertEquals("PlayerOne Wins the Game",result);
 	}
+	
+	/* When player2 wins a game */
+	@Test
+	public void playerTwoWins() {
+		result = test.getScore(3,5);
+		assertEquals("PlayerOne Wins the Game",result);
+	}
 }

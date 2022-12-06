@@ -30,7 +30,7 @@ public class TennisService {
 			else if((playerOneScore == 4 && playerTwoScore ==3)||(playerOneScore == 3 && playerTwoScore ==4)) {
 				return "Advantage";
 			}
-			else if(playerOneScore == 5 && playerTwoScore ==3){
+			else if((playerOneScore == 5 && playerTwoScore ==3)||(playerOneScore == 3 && playerTwoScore ==5)){
 				return "PlayerOne Wins the Game";
 			}
 			else
