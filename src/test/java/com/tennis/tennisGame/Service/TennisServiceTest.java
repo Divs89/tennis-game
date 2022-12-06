@@ -108,4 +108,11 @@ public class TennisServiceTest {
 		result = test.getScore(3,4);
 		assertEquals("Advantage",result);
 	}
+	
+	/* When player1 wins a game */
+	@Test
+	public void playerWins() {
+		result = test.getScore(5,3);
+		assertEquals("PlayerOne Wins the Game",result);
+	}
 }
