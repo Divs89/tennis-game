@@ -113,26 +113,29 @@ public class TennisServiceTest {
 	@Test
 	public void playerWins() {
 		result = test.getScore(5,3);
-		assertEquals("PlayerOne Wins the Game",result);
+		assertEquals("PlayerOne Wins the Game { Statics :- PlayerOne Won : 5 Points ; PlayerTwo Won : 3 Points }"
+				,result);
 	}
 	
 	/* When player2 wins a game */
 	@Test
 	public void playerTwoWins() {
-		result = test.getScore(3,5);
-		assertEquals("PlayerTwo Wins the Game",result);
+		result = test.getScore(2,5);
+		assertEquals("PlayerTwo Wins the Game { Statics :- PlayerOne Won : 2 Points ; PlayerTwo Won : 5 Points }",result);
 	}
 	
 	/* When players score more points (match continues if each player score points alternatively after duece) */
-	@Test
-	public void morePointsWin() {
-		result = test.getScore(13,15);
-		assertEquals("PlayerTwo Wins the Game",result);
-	}
 	
 	@Test
 	public void morePointsAdv() {
 		result = test.getScore(23,22);
 		assertEquals("PlayerOne Advantage",result);
 	}
+	
+	@Test
+	public void morePointsWin() {
+		result = test.getScore(13,15);
+		assertEquals("PlayerTwo Wins the Game { Statics :- PlayerOne Won : 13 Points ; PlayerTwo Won : 15 Points }",result);
+	}
+	
 }

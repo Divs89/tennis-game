@@ -47,11 +47,16 @@ public class TennisService {
 		int score = playerOneScore - playerTwoScore;
 
 		if(Math.signum(score)==1){
-		    return (score>=2)? "PlayerOne Wins the Game":"PlayerOne "+"Advantage";}
+		    return (score>=2)? "PlayerOne Wins the Game"+statics():"PlayerOne "+"Advantage";}
 
 		else{
-		    return (score<=-2)?"PlayerTwo Wins the Game":"PlayerTwo "+"Advantage";
+		    return (score<=-2)?"PlayerTwo Wins the Game"+statics():"PlayerTwo "+"Advantage";
 		}
+	}
+
+	public String statics() {
+		// TODO Auto-generated method stub
+		return (" { Statics :- PlayerOne Won : "+playerOneScore+ " Points ; PlayerTwo Won : "+ playerTwoScore+" Points }");
 	}
 
 }
