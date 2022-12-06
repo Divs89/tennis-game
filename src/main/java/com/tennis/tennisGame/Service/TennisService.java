@@ -18,6 +18,10 @@ public class TennisService {
 		score.put(2,"Thirty");
 		score.put(3,"Forty");
 	}
+	
+	/* 
+	 * Gets input from controller and checks it is a valid input
+	 */
 
 	public String getScore(int playerOne, int playerTwo) {
 		this.playerOneScore = playerOne;
@@ -29,7 +33,11 @@ public class TennisService {
 		else
 			return "invalid Score";
 	}
-
+	
+	/*
+	 * Handles when both players score same point until they reaches duece
+	 */
+	
 	public String deuce() {
 		// TODO Auto-generated method stub
 		if (playerOneScore ==3 && playerTwoScore == 3){
@@ -42,17 +50,29 @@ public class TennisService {
 	         }
 	}
 	
+	/*
+	 * Handles Advantage and Winning points
+	 */
+	
 	public String score() {
 		// TODO Auto-generated method stub
 		int score = playerOneScore - playerTwoScore;
+		
+		if(playerOneScore == playerTwoScore) {
+			return "Duece";
+		}
 
-		if(Math.signum(score)==1){
+		else if(Math.signum(score)==1){
 		    return (score>=2)? "PlayerOne Wins the Game"+statics():"PlayerOne "+"Advantage";}
 
 		else{
 		    return (score<=-2)?"PlayerTwo Wins the Game"+statics():"PlayerTwo "+"Advantage";
 		}
 	}
+	
+	/*
+	 * Method to display how much points each player won after win a game
+	 */
 
 	public String statics() {
 		// TODO Auto-generated method stub
