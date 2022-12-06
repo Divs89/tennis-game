@@ -17,4 +17,10 @@ public class TennisServiceTest {
 		result = test.getScore(0, 0);
 		assertEquals("Love-All",result);
 	}
+	
+	@Test
+	public void loveFifteen() {
+		result = test.getScore(0, 1);
+		assertEquals("Love-Fifteen",result);
+	}
 }

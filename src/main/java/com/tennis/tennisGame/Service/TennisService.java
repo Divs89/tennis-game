@@ -14,6 +14,10 @@ public class TennisService {
 		if(playerOneScore==0 && playerTwoScore ==0) {
 			return "Love-All";
 		}
+		
+		else if(playerOneScore==0 && playerTwoScore ==1) {
+			return "Love-Fifteen";
+		}
 		else
 			return "invalid Score";
 	}
