@@ -28,10 +28,10 @@ public class TennisService {
 				return "Deuce";
 			}
 			else if((playerOneScore == 4 && playerTwoScore ==3)||(playerOneScore == 3 && playerTwoScore ==4)) {
-				return "Advantage";
+				return (playerOneScore==4)?"PlayerOne Advantage":"PlayerTwo Advantage";
 			}
 			else if((playerOneScore == 5 && playerTwoScore ==3)||(playerOneScore == 3 && playerTwoScore ==5)){
-				return "PlayerOne Wins the Game";
+				return (playerOneScore>3)?"PlayerOne Wins the Game":"PlayerTwo Wins the Game";
 			}
 			else
 			return (playerOneScore == playerTwoScore)?score.get(playerOneScore)+"-All":score.get(playerOneScore)+"-"+score.get(playerTwoScore);

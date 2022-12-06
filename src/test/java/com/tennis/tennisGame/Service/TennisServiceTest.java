@@ -99,14 +99,14 @@ public class TennisServiceTest {
 	@Test
 	public void adv() {
 		result = test.getScore(4,3);
-		assertEquals("Advantage",result);
+		assertEquals("PlayerOne Advantage",result);
 	}
 	
 	/* When player1 scores a point after deuce */
 	@Test
 	public void advTwo() {
 		result = test.getScore(3,4);
-		assertEquals("Advantage",result);
+		assertEquals("PlayerTwo Advantage",result);
 	}
 	
 	/* When player1 wins a game */
@@ -120,6 +120,6 @@ public class TennisServiceTest {
 	@Test
 	public void playerTwoWins() {
 		result = test.getScore(3,5);
-		assertEquals("PlayerOne Wins the Game",result);
+		assertEquals("PlayerTwo Wins the Game",result);
 	}
 }
