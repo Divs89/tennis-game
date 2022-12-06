@@ -74,4 +74,18 @@ public class TennisServiceTest {
 		assertEquals("Fifteen-Thirty",result);
 	}
 	
+	/* When both player in same point */
+	@Test
+	public void fifteenAll() {
+		result = test.getScore(1,1);
+		assertEquals("Fifteen-All",result);
+	}
+	
+	/* When both player scores point */
+	@Test
+	public void thirtyAll() {
+		result = test.getScore(2,2);
+		assertEquals("Thirty-All",result);
+	}
+	
 }

@@ -23,12 +23,8 @@ public class TennisService {
 		this.playerOneScore = playerOne;
 		this.playerTwoScore = playerTwo;
 
-		if(playerOneScore==0 && playerTwoScore ==0) {
-			return "Love-All";
-		}
-		
-		else if(playerOneScore>=0 && playerTwoScore >=0) {
-			return score.get(playerOneScore)+"-"+score.get(playerTwoScore);
+		if(playerOneScore>=0 && playerTwoScore>=0) {
+			return (playerOneScore == playerTwoScore)?score.get(playerOneScore)+"-All":score.get(playerOneScore)+"-"+score.get(playerTwoScore);
 		}
 		else
 			return "invalid Score";
