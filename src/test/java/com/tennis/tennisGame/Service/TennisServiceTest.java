@@ -18,24 +18,31 @@ public class TennisServiceTest {
 		assertEquals("Love-All",result);
 	}
 	
-	/* To check player1 scores a point */
+	/* To check player2 scores a point */
 	@Test
 	public void loveFifteen() {
 		result = test.getScore(0, 1);
 		assertEquals("Love-Fifteen",result);
 	}
 	
-	/* To check player1 scores 2 point */
+	/* To check player2 scores 2 point */
 	@Test
 	public void loveThirty() {
 		result = test.getScore(0, 2);
 		assertEquals("Love-Thirty",result);
 	}
 	
-	/* To check player1 scores 3 point */
+	/* To check player2 scores 3 point */
 	@Test
 	public void loveForty() {
 		result = test.getScore(0, 3);
 		assertEquals("Love-Forty",result);
+	}
+	
+	/* To check player1 scores a point */
+	@Test
+	public void fifteenLove() {
+		result = test.getScore(1,0);
+		assertEquals("Fifteen-Love",result);
 	}
 }

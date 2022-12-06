@@ -27,8 +27,8 @@ public class TennisService {
 			return "Love-All";
 		}
 		
-		else if(playerOneScore==0 && playerTwoScore >=0) {
-			return "Love-"+score.get(playerTwoScore);
+		else if(playerOneScore>=0 && playerTwoScore >=0) {
+			return score.get(playerOneScore)+"-"+score.get(playerTwoScore);
 		}
 		else
 			return "invalid Score";
