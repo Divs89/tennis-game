@@ -45,4 +45,19 @@ public class TennisServiceTest {
 		result = test.getScore(1,0);
 		assertEquals("Fifteen-Love",result);
 	}
+	
+	/* To check player1 scores 2 point */
+	@Test
+	public void thirtyLove() {
+		result = test.getScore(2,0);
+		assertEquals("Thirty-Love",result);
+	}
+	
+	/* To check player1 scores 3 point */
+	@Test
+	public void fortyLove() {
+		result = test.getScore(3,0);
+		assertEquals("Forty-Love",result);
+	}
+	
 }
