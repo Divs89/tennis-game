@@ -15,9 +15,9 @@ public class TennisController {
 	 *    and displays respective score
 	 */
 	@GetMapping ("/tennis/{playerOne}/{playerTwo}")
-	public String tennis(@PathVariable int playerOne,@PathVariable int playerTwo) {
+	public String score(@PathVariable int playerOne,@PathVariable int playerTwo) {
+		// TODO Auto-generated method stub
 		return tennisService.getScore(playerOne,playerTwo);
-		
 	}
 	
 	/* To start a New Game or to reset the score */
@@ -27,4 +27,6 @@ public class TennisController {
 		tennisService.resetScore();
 		return "Love - All";
 	}
+	
+	
 }

@@ -13,9 +13,10 @@ public class TennisControllerTest {
 	/* This controller test method to check it passing input to service and getting output*/
 	
 	@Test
-	public void controllerTest() {
-		assertEquals("Thirty-Forty",test.tennis(2, 3));
+	public void scoreTest() {
+		assertEquals("Thirty-Forty",test.score(2,3));
 	}
+
 	
 	/* Test case to start new game*/
 	
