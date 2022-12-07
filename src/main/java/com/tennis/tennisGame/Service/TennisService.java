@@ -83,6 +83,7 @@ public class TennisService {
 
 	public String statics() {
 		// TODO Auto-generated method stub
+		resetScore();
 		return (" { Statics :- PlayerOne Won : "+playerOneScore+ " Points ; PlayerTwo Won : "+ playerTwoScore+" Points }");
 	}
 	

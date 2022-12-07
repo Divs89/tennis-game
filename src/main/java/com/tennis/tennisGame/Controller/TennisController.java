@@ -19,4 +19,12 @@ public class TennisController {
 		return tennisService.getScore(playerOne,playerTwo);
 		
 	}
+	
+	/* To start a New Game or to reset the score */
+	
+	@GetMapping ("/newGame")
+	public String newGame() {
+		tennisService.resetScore();
+		return "Love - All";
+	}
 }

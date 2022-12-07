@@ -38,6 +38,7 @@ public class TennisServiceTest {
 	/* To check player2 scores 3 point */
 	@Test
 	public void loveForty() {
+		test.resetScore();
 		result = test.getScore(0, 3);
 		assertEquals("Love-Forty",result);
 	}
