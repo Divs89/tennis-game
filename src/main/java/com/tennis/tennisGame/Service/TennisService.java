@@ -66,7 +66,7 @@ public class TennisService {
 		int score = playerOneScore - playerTwoScore;
 		
 		if(playerOneScore == playerTwoScore) {
-			return "Duece";
+			return "Deuce";
 		}
 
 		else if(Math.signum(score)==1){

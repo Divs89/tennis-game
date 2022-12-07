@@ -149,5 +149,27 @@ public class TennisServiceTest {
 		assertEquals("PlayerOne Wins the Game { Statics :- PlayerOne Won : 25 Points ; PlayerTwo Won : 23 Points }",result);
 	}
 	
+	/* to check invalid score */
+	@Test
+	public void invalid() {
+		result=test.getScore(0, -1);
+		assertEquals("invalid Score",result);
+	}
+	
+	/* to check invalid score-points should be same or increase*/
+	@Test
+	public void score() {
+		result=test.getScore(1, 5);
+		assertEquals("invalid Score",result);
+	}
+	
+	/* When both player scores same point after Deuce */
+	@Test
+	public void deuceAgain() {
+		test.resetScore();
+		result = test.getScore(12,12);
+		assertEquals("Deuce",result);
+	}
+	
 	
 }

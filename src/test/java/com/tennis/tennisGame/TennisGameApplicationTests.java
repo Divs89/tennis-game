@@ -7,7 +7,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 class TennisGameApplicationTests {
 
 	@Test
-	void contextLoads() {
-	}
+	void test()
+    {
+		TennisGameApplication.main(new String[]{
+                "--spring.main.web-environment=false",
+                "--spring.autoconfigure.exclude=test",
+        });
+    }
 
 }
